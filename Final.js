@@ -29,7 +29,7 @@ class Block {
 
 
 class Blockchain{
-    constructor() {
+    Blockchain() {
         this.chain = [this.createGenesisBlock()];
         this.difficulty = 4;
     }
@@ -66,9 +66,13 @@ class Blockchain{
     }
 }
 
-let Email = new Blockchain();
+/*let Email = new Blockchain();
 console.log('Mining block 1...');
-Email.addBlock(new Block(1,"Hello"));
+Email.addBlock(new Block(1,));
 
 console.log('Mining block 2...');
-Email.addBlock(new Block(2, "Bye"));
+Email.addBlock(new Block(2, "Bye"));*/
+module.exports={
+    Blockchain:Blockchain,
+    Block:Block
+}
