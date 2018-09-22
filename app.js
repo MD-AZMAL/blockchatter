@@ -11,8 +11,8 @@ mongoose.connect('mongodb://localhost:27017/db', {
 });
 
 var app = express();
-const Blockchain = require('./Final');
-const blockchain = new Blockchain();
+const Bchain = require('./Final');
+const blockchain = new Bchain.Blockchain();
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -57,14 +57,14 @@ app.post('/login', (req, res) => {
         if (!err) {
             if (user) {
                 if (cryptojs.SHA256(req.body.password) == user.hashedPassword) {
-                     console.log('Successfully logged In');
-                     res.send('login successfull');
                     
                     console.log('Mining block 1...');
                     blockchain.addBlock(new Block(1,email));
                     
                     console.log('Mining block 2...');
                     blockchain.addBlock(new Block(2, email));
+                    console.log('Successfully logged In');
+                     res.send('login successfull');
 
                     } else {
                     console.log('incorrect password');
