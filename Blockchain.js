@@ -10,12 +10,7 @@ class Blockchain {
    }
 
    addBlock(block) {
-
-      if(this.blocks.length == 0) {
-        block.previousHash = "0000000000000000000000000000000000000000000000000000000000000000000"
-        block.hash = this.generateHash(block)
-      }
-
+      block.hash = this.generateHash(block)
       this.blocks.push(block)
    }
 
@@ -36,11 +31,11 @@ class Blockchain {
     generateHash(block) {
 
      let hash = sha256(block.key)
-
+      console.log('Hashing')
      while(!hash.startsWith("0000")) {
        block.nonce += 1
        hash = sha256(block.key)
-       console.log(hash)
+      //  console.log(hash)
      }
 
      return hash
