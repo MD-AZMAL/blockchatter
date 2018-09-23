@@ -5,12 +5,12 @@ bodyParser = require('body-parser'),
 cryptojs = require('crypto-js'),
 User = require('./models/user.js');
 
-let Block = require('./models/Block')
+let Block = require('./Block')
 
-let Blockchain = require('./models/Blockchain')
+let Blockchain = require('./Blockchain')
 
 // create genesis block
-let genesisBlock = new Block('0','0','0');
+let genesisBlock = new Block(0,"0000000000000000000000000000000000000000000000000000000000000000000",'0','0','0');
 let blockchain = new Blockchain(genesisBlock)
 
 
@@ -84,7 +84,11 @@ User.findOne({
 })
 
 app.post('/send', (req, res) => {
-  
+    let blockIndex = blockchain.blocks.length-1
+    let block = new Block(blockIndex+1,blockchain.blocks[blockIndex].hash,req.body.senderKey,req.body.recieverKey,req.body.message);
+    blockchain.addBlock(block);
+    console.log(block);
+    res.send('block added');
 });
 
 app.listen(3000, () => {
