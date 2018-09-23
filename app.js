@@ -6,7 +6,7 @@ cryptojs = require('crypto-js'),
 User = require('./models/user.js');
 
 let Block = require('./models/Block')
-let Data = require('./models/data')
+
 let Blockchain = require('./models/Blockchain')
 
 // create genesis block
