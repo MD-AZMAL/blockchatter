@@ -1,49 +1,56 @@
-let SHA256 = require("crypto-js/sha256");
-let Block = require('./Block.js');
+let Block = require('./Block')
+let sha256 = require('js-sha256')
 
 class Blockchain {
-    Blockchain() {
-        this.chain = [this.createGenesisBlock()];
-        console.log(this.chain)
-        this.difficulty = 4;
-    }
 
-    createGenesisBlock() {
-        return new Block(0, '0', '0', ' ');
-    }
+   constructor(genesisBlock) {
 
-    getLatestBlock() {
-        return this.chain[this.chain.length - 1];
-    }
+     this.blocks = []
+     this.addBlock(genesisBlock)
+   }
 
-    addBlock(newBlock) {
-        newBlock.previousHash = this.getLatestBlock().hash;
-        newBlock.mineBlock(this.difficulty);
-        this.chain.push(newBlock);
-    }
+   addBlock(block) {
 
-    isChainValid() {
-        for (let i = 1; i < this.chain.length; i++) {
-            const currentBlock = this.chain[i];
-            const previousBlock = this.chain[i - 1];
+      if(this.blocks.length == 0) {
+        block.previousHash = "0000000000000000000000000000000000000000000000000000000000000000000"
+        block.hash = this.generateHash(block)
+      }
 
-            if (currentBlock.hash !== currentBlock.calculateHash()) {
-                return false;
-            }
+      this.blocks.push(block)
+   }
 
-            if (currentBlock.previousHash !== previousBlock.hash) {
-                return false;
-            }
-        }
+   getNextBlock(data) {
 
-        return true;
-    }
+      let block = new Block()
+       
+     
+
+      let previousBlock = this.getPreviousBlock()
+      block.index = this.blocks.length
+      block.previousHash = previousBlock.hash
+      block.hash = this.generateHash(block)
+     
+      return block
+   }
+
+    generateHash(block) {
+
+     let hash = sha256(block.key)
+
+     while(!hash.startsWith("0000")) {
+       block.nonce += 1
+       hash = sha256(block.key)
+       console.log(hash)
+     }
+
+     return hash
+
+   }
+
+   getPreviousBlock() {
+     return this.blocks[this.blocks.length - 1]
+   }
+
 }
 
-/*let Email = new Blockchain();
-console.log('Mining block 1...');
-Email.addBlock(new Block(1,));
-
-console.log('Mining block 2...');
-Email.addBlock(new Block(2, "Bye"));*/
-module.exports = Blockchain;
+module.exports = Blockchain
