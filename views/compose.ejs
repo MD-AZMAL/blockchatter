@@ -22,24 +22,22 @@
     <div class="jumbotron">
         <h2 style="color:deepskyblue;">Compose</h2>
         <div class="card-body">
-                <form>
+                <form action="/send" method="POST">
                     <div class="form-group">
-                                <label for="usr">Sender Public Key:</label>
-                                <input type="num" class="form-control" id="key">
+                                <label for="senderKey">Sender Public Key:</label>
+                                <input type="num" class="form-control" name="senderKey" required>
                     </div>
                     <div class="form-group">
-                                <label for="pwd">Receiver Public Key:</label>
-                                <input type="num" class="form-control" id="key">
+                                <label for="receiverKey">Receiver Public Key:</label>
+                                <input type="num" class="form-control" name="receiverKey" required>
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Message:</label>
-                        <input type="any" class="form-control" id="Data">
+                        <label for="message">Message:</label>
+                        <input type="any" class="form-control" name="message" required>
                      </div>
+                     <button type="submit" class="btn btn-info">SEND</button>
                 </form>
             </div>
-        <div class="container">
-            <button type="button" class="btn btn-info">SEND</button>
-        </div>
     </div> 
 </body>
 </html>
