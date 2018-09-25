@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+        .card-deck{background-color:powderblue;}
+    </style>
+</head>
+<body>
+    <div class="card-deck">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                            <label for="usr">Block:</label>
+                            <input type="number" class="form-control" id="usr">
+                </div>
+                <div class="form-group">
+                            <label for="pwd">Nonce:</label>
+                            <input type="number" class="form-control" id="Nonce">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Data:</label>
+                    <input type="any" class="form-control" id="Data">
+                 </div>
+                 <div class="form-group">
+                    <label for="pwd">Prev:</label>
+                    <input type="number" class="form-control" id="prev">
+                 </div>
+                 <div class="form-group">
+                    <label for="pwd">Hash:</label>
+                    <input type="float" class="form-control" id="hash">
+                </div>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                            <label for="usr">Block:</label>
+                            <input type="number" class="form-control" id="usr">
+                </div>
+                <div class="form-group">
+                            <label for="pwd">Nonce:</label>
+                            <input type="number" class="form-control" id="Nonce">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Data:</label>
+                    <input type="any" class="form-control" id="Data">
+                 </div>
+                 <div class="form-group">
+                    <label for="pwd">Prev:</label>
+                    <input type="number" class="form-control" id="prev">
+                 </div>
+                 <div class="form-group">
+                    <label for="pwd">Hash:</label>
+                    <input type="float" class="form-control" id="hash">
+                </div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <button type="button" class="btn btn-info">MINE</button>
+        <button type="button" class="btn btn-info">UPDATE</button>
+        <button type="button" class="btn btn-info">VALIDATE</button>
+        <button type="button" class="btn btn-info" onclick="location.href='Compose.htm';">COMPOSE</button>
+</div>
+</body>
+</html>
