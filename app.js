@@ -29,19 +29,27 @@ app.use(bodyParser.urlencoded({
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
+    req.headers.new = 'lorem'
     res.render('index');
 });
 
 app.get('/login', (req, res) => {
     res.render('login');
+
 })
 
 app.get('/signup', (req, res) => {
     res.render('signup');
 })
 
-app.get('/getblocks',(req,res) => {
-    res.render('block');
+app.get('/blocks', (req, res) => {
+    res.render('block',{
+        blocks: blockchain.blocks
+    });
+})
+
+app.get('/compose', (req, res) => {
+    res.render('compose');
 })
 
 app.post('/signup', (req, res) => {
@@ -55,7 +63,7 @@ app.post('/signup', (req, res) => {
             let pubK = cryptojs.SHA256(prvK);
             if (!user) {
                 if (req.body.password != req.body.password2) {
-                    res.render('signup');
+                    res.redirect('/signup');
                 } else {
                     let tmp = {
                         email: req.body.email,
@@ -68,13 +76,12 @@ app.post('/signup', (req, res) => {
                         if (!err) {
                             console.log('User created');
                             console.log(user);
-                            res.send('User Created')
+                            res.redirect('/login');
                         } else {
                             console.log('Error : ' + err);
                             res.send('Error : ' + err);
                         }
                     })
-                    res.render('login.ejs');
                 }
             }
         }
@@ -88,8 +95,7 @@ app.post('/login', (req, res) => {
         if (!err) {
             if (user) {
                 if (cryptojs.SHA256(req.body.password) == user.hashedPassword) {
-                    res.send('login successfull');
-
+                    res.redirect('/');
                 } else {
                     console.log('incorrect password');
                     res.send('Incorrect password');
@@ -107,10 +113,11 @@ app.post('/login', (req, res) => {
 
 app.post('/send', (req, res) => {
     let blockIndex = blockchain.blocks.length - 1
-    let block = new Block(blockIndex + 1, blockchain.blocks[blockIndex].hash, req.body.senderKey, req.body.recieverKey, req.body.message);
+    console.log(req.body.senderKey)
+    let block = new Block(blockIndex + 1, blockchain.blocks[blockIndex].hash, req.body.senderKey, req.body.receiverKey, req.body.message);
     blockchain.addBlock(block);
     console.log(block);
-    res.send('block added');
+    res.redirect('/blocks');
 });
 
 app.listen(3000, () => {
