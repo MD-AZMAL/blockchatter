@@ -1,13 +1,13 @@
 class Block {
 
-  constructor(index,previousHash,senderKey,recieverKey,message) {
+  constructor(index,previousHash,senderKey,receiverKey,message) {
 
     this.index = index;
     this.previousHash = previousHash;
     this.hash = "";
     this.nonce = 0;
     this.data={
-        recieverKey:recieverKey,
+        receiverKey:receiverKey,
         senderKey: senderKey,
         message:message
     };
