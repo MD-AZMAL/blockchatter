@@ -16,6 +16,6 @@ can see the details of the transactions and thereby
 verify it’s validity using Smart Contract.
 --------------------------
 
- Requirements:\
-[MongoDB](https://docs.mongodb.com/manual/installation/)\
-[npmInstall](https://www.npmjs.com/get-npm)
+## Requirements:
+Install MongoDB: [MongoDB](https://docs.mongodb.com/manual/installation/)\
+Install NPM: [npmInstall](https://www.npmjs.com/get-npm)
