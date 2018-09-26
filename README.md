@@ -16,7 +16,7 @@ can see the details of the transactions and thereby
 verify it’s validity using Smart Contract.
 --------------------------
 
-### Requirements:
+### REQUIREMENTS:
 --------------------------
 [MongoDB](https://docs.mongodb.com/manual/installation/)\
 [npm install](https://www.npmjs.com/get-npm)
