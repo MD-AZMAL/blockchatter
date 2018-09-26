@@ -15,4 +15,9 @@ In this process, every participant of the network
 can see the details of the transactions and thereby
 verify it’s validity using Smart Contract.
 --------------------------
-Link for installing MongoDB: https://docs.mongodb.com/manual/installation/
+
+## Requirements:
+
+[MongoDB](https://docs.mongodb.com/manual/installation/)
+
+[npmInstall](https://www.npmjs.com/get-npm)
