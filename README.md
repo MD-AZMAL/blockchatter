@@ -14,8 +14,6 @@ the help of Hashing and Digital Signature concepts.
 In this process, every participant of the network
 can see the details of the transactions and thereby
 verify it’s validity using Smart Contract.
---------------------------
-
 ### REQUIREMENTS:
 --------------------------
 [MongoDB](https://docs.mongodb.com/manual/installation/)\
