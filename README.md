@@ -17,7 +17,5 @@ verify it’s validity using Smart Contract.
 --------------------------
 
 ## Requirements:
-
-[MongoDB](https://docs.mongodb.com/manual/installation/)
-
+[MongoDB](https://docs.mongodb.com/manual/installation/)\
 [npmInstall](https://www.npmjs.com/get-npm)
