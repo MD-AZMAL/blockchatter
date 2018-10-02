@@ -1,3 +1,10 @@
+![](https://img.shields.io/badge/html-5-blue.svg?style=for-the-badge)
+
+![](https://img.shields.io/badge/css-3-green.svg?style=for-the-badge)
+
+![](https://img.shields.io/badge/node.js-blue.svg?style=for-the-badge)
+
+
 ## PROJECT STATEMENT:
 -------------------------
 ● SMART MESSAGING USING BLOCK CHAIN CONCEPT
