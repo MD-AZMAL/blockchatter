@@ -1,4 +1,3 @@
-![](https://img.shields.io/badge/BLock-CHAIN-orange.svg?longCache=true&style=for-the-badge)
 ### PROJECT STATEMENT:
 -------------------------
 ● SMART MESSAGING USING BLOCK CHAIN CONCEPT
